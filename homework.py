@@ -1,4 +1,5 @@
-
+import math
+import random
 def test_greeting():
     name = "Анна"
     age = 25
@@ -9,14 +10,12 @@ def test_greeting():
 
     print(output)
 
-import math
-
 def test_rectangle():
 
     a = 10
     b = 20
 
-    perimeter = 2 * (a + b)
+    perimeter = (a + b) * 2
 
     assert perimeter == 60
 
@@ -31,7 +30,7 @@ def test_circle():
 
    r = 23
 
-   area = (r ** 2) * math.pi
+   area = r ** 2 * math.pi
 
    assert area == 1661.9025137490005
 
@@ -39,16 +38,15 @@ def test_circle():
 
    assert lenght == 144.51326206513048
 
-import random
+   print(area)
+   print(lenght)
 
 def test_random_list():
-    l = [random.randint(1, 100) for i in range(10)]
+    l = [random.randint(1, 100) for _ in range(10)]
     l.sort()
 
     assert len(l) == 10
     assert all(l[i] <= l[i + 1] for i in range(len(l) - 1))
-
-    print(l)
 
 def test_unique_elemnts():
 
@@ -59,9 +57,6 @@ def test_unique_elemnts():
     assert isinstance(l, list)
     assert len(l) == 10
     assert l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-    print(l)
-
 
 def test_dicts():
     first = ["a", "b", "c", "d", "e"]
@@ -74,4 +69,3 @@ def test_dicts():
     assert list(d.keys()) == first
     assert list(d.values()) == second
 
-    print(d)
